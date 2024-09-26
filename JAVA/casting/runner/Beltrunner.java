@@ -7,6 +7,7 @@ public class Beltrunner {
 	public static void main(String[] args) {
 		
 		Belt belt=new Belt();
+	
 		Dancer dancer=new Dancer();
 		dancer.use(belt);
 		
