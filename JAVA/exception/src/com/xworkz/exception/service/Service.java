@@ -1,6 +1,6 @@
 package com.xworkz.exception.service;
 
-import com.xworkz.exceptions.*;
+import com.xworkz.exception.*;
 
 public class Service {
 

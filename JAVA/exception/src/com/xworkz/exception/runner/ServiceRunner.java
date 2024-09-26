@@ -1,7 +1,7 @@
 package com.xworkz.exception.runner;
 
+import com.xworkz.exception.*;
 import com.xworkz.exception.service.Service;
-import com.xworkz.exceptions.*;
 
 public class ServiceRunner {
 
