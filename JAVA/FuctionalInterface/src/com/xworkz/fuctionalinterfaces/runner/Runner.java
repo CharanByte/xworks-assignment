@@ -154,7 +154,7 @@ public class Runner {
 			return 10L;
 		};
 		LongToDoubleFunction doubleFunction4=(k)->{
-			return 9.00;
+			return 10.00;
 		};
 		
 	}
