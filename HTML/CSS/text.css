@@ -17,11 +17,21 @@ h3{
 
 }
 p{
+    
     line-height: 30px;
     text-align: justify;
+    height: 150px;
+    width: 200px;
+    border: 2px solid red;
+    overflow-y: scroll;
+
+}
+div{
+    display: grid;
+   justify-content: center;
 }
 #increase{
-   
+    
     letter-spacing: 0cap;
     color: greenyellow;
     font-size: 60px;
@@ -29,4 +39,10 @@ p{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-weight: lighter;
   
+}
+#box{
+    color: red;
+    padding: 20px;
+    margin: 50px 50px;
+
 }
