@@ -18,9 +18,9 @@ public class Railway extends HttpServlet{
 	@Override
 	protected void service(HttpServletRequest arg0, HttpServletResponse arg1) throws ServletException, IOException {
 		
-		
 		arg1.setContentType("text/html");
 		PrintWriter printWriter=arg1.getWriter();
+		
 		printWriter.println("<h1>"+"Success"+"</h1>");
 		printWriter.println("<html>");
 		printWriter.println("<body>");
