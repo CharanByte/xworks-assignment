@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cricket Booking</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+  <div class="container mt-5">
+    <h1 class="text-center mb-4" style="color: red">Cricket Booking Form</h1>
+    
+    <form action="cricket" method="post">
+      <div class="row">
+        <!-- Ground Name -->
+        <div class="col-md-6 mb-3">
+          <label for="groundName" class="form-label">Ground Name</label>
+          <input type="text" class="form-control" id="groundName" name="groundName" required>
+        </div>
+
+        <!-- Customer Name -->
+        <div class="col-md-6 mb-3">
+          <label for="customerName" class="form-label">Customer Name</label>
+          <input type="text" class="form-control" id="customerName" name="customerName" required>
+        </div>
+      </div>
+
+      <div class="row">
+        <!-- Customer Email -->
+        <div class="col-md-6 mb-3">
+          <label for="customerEmail" class="form-label">Customer Email</label>
+          <input type="email" class="form-control" id="customerEmail" name="customerEmail" required>
+        </div>
+
+        <!-- Seat Type -->
+        <div class="col-md-6 mb-3">
+          <label for="seatType" class="form-label">Seat Type</label>
+          <select class="form-select" id="seatType" name="seatType" required>
+            <option value="" selected>--select--</option>
+            <option value="First Tier">First Tier</option>
+            <option value="Second Tier">Second Tier</option>
+            <option value="Third Tier">Third Tier</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="row">
+        <!-- Number of Tickets -->
+        <div class="col-md-6 mb-3">
+          <label for="numberOfTickets" class="form-label">Number of Tickets</label>
+          <input type="number" class="form-control" id="numberOfTickets" name="numberOfTickets" min="1" required>
+        </div>
+      </div>
+
+      <div class="d-flex justify-content-center">
+        <button type="submit" class="btn btn-primary btn-lg">Book Tickets</button>
+      </div>
+    </form>
+  </div>
+
+  <!-- Bootstrap JS (Optional, for responsive behavior) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
