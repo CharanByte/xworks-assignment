@@ -3,57 +3,69 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Feedback Form</title>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+	crossorigin="anonymous">
 <style type="text/css">
+.se {
+	height: 40px;
+	width: 100%;
+}
 
-.se{
-height:40px;
-width: 100%;
+.submit {
+	margin-left: 30%;
+	width: 100px;
+	background-color: blue;
+	color: white;
 }
-.submit{
-  margin-left: 30%;
-  width: 100px;
-  background-color: blue;
-  color: white;
+
+.col-sm-10 {
+	width: 40%;
 }
-.col-sm-10{
-width: 40%;
-}
-h1{
-margin-left: 25%;
-color: red;
+
+h1 {
+	margin-left: 25%;
+	color: red;
 }
 </style>
 </head>
 <body>
-<h1>Feedback Form</h1>
-<form action="feedback">
- <div class="row mb-3">
-    <label for="inputPassword3" class="col-sm-2 col-form-label">Name</label>
-    <div class="col-sm-10">
-      <input type="text" class="form-control" id="inputPassword3" name="name">
-    </div>
-  </div>
- <div class="row mb-3">
-    <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
-    <div class="col-sm-10">
-      <input type="email" class="form-control" id="inputEmail3" name="email">
-    </div>
-  </div>
-  <div class="row mb-3">
-    <label for="inputEmail3" class="col-sm-2 col-form-label">Comments</label>
-    <div class="col-sm-10">
-      <input type="text" class="form-control" id="inputEmail3" name="email">
-    </div>
-  </div>
-
-  
- <br><br>
- <input class="submit" type="submit" value="Submit" >
-      
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+	<h1>Feedback Form</h1>
+	<form action="feedback">
+		<div class="row mb-3">
+			<label for="inputPassword3" class="col-sm-2 col-form-label">Name</label>
+			<div class="col-sm-10">
+				<input type="text" class="form-control" id="inputPassword3"
+					name="name">
+			</div>
+		</div>
+		<div class="row mb-3">
+			<label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
+			<div class="col-sm-10">
+				<input type="email" class="form-control" id="inputEmail3"
+					name="email">
+			</div>
+		</div>
+		<div class="row mb-3">
+			<label for="inputEmail3" class="col-sm-2 col-form-label">Comments</label>
+			<div class="col-sm-10">
+				<input type="text" class="form-control" id="inputEmail3"
+					name="comments">
+			</div>
+		</div>
 
 
-</form>
+		<br>
+		<br> <input class="submit" type="submit" value="Submit">
+
+		<script
+			src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+			integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+			crossorigin="anonymous"></script>
+
+
+	</form>
 </body>
 </html>
