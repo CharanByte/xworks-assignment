@@ -1,4 +1,4 @@
-package com.xworkz.servlet.service;
+package com.xworkz.form.servlet;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -9,7 +9,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.xworkz.servlet.dto.CollegeAdmissionDTO;
+import com.xworkz.form.dto.CollegeAdmissionDTO;
+import com.xworkz.form.service.CollegeAdmissionImp;
+import com.xworkz.form.service.CollegeAdmissionService;
 @WebServlet(loadOnStartup = 1,urlPatterns = "/college")
 public class CollegeAdmission  extends HttpServlet {
 
@@ -33,6 +35,17 @@ public class CollegeAdmission  extends HttpServlet {
 		Integer convertedAge=Integer.valueOf(age);
 		CollegeAdmissionDTO ref =new CollegeAdmissionDTO(name, email, convertedMobile, address, fatherName, motherName,convertedPercentage, course,convertedAge);
 		
+		CollegeAdmissionService service=new CollegeAdmissionImp();
+		boolean valid=service.validateAndSave(ref);
+		
+		if(valid) {
+			System.out.println("Data  is valid");
+		}
+		else{
+			System.out.println("Data  is Invalid");
+
+			
+		}
 		arg1.setContentType("text/html");
 		
 		PrintWriter printWriter=arg1.getWriter();
@@ -43,9 +56,6 @@ public class CollegeAdmission  extends HttpServlet {
 
 		printWriter.println("</body>");
 
-		printWriter.println("</html>");
-		
-		
-		
+		printWriter.println("</html>");		
 	}
 }

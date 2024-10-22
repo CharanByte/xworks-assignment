@@ -1,4 +1,4 @@
-package com.xworkz.servlet.service;
+package com.xworkz.form.servlet;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.xworkz.servlet.dto.ConcertTicketDTO;
+import com.xworkz.form.dto.ConcertTicketDTO;
 
 @WebServlet(loadOnStartup = 1,urlPatterns = "/concert")
 
