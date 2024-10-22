@@ -10,6 +10,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.xworkz.form.dto.FeedbackFormDTO;
+import com.xworkz.form.service.FeedBackService;
+import com.xworkz.form.service.FeedBackServiceImpl;
 
 @WebServlet(loadOnStartup = 1, urlPatterns = "/feedback")
 public class Feedback extends HttpServlet {
@@ -26,7 +28,19 @@ public class Feedback extends HttpServlet {
 		String comments = arg0.getParameter("comments");
 
 		FeedbackFormDTO dto = new FeedbackFormDTO(name, email, comments);
+		
+		FeedBackService service=new FeedBackServiceImpl();
+		boolean valid =service.validateAndSave(dto);
+		
+		if(valid) {
+			System.out.println("Data is valid");
+		}
+		else {
+			System.out.println("Data is Invalid");
+		}
 		arg1.setContentType("text/html");
+		
+		
 
 		PrintWriter printWriter = arg1.getWriter();
 		printWriter.println("<html>");
