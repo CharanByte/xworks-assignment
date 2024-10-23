@@ -46,16 +46,21 @@ public class CollegeAdmission  extends HttpServlet {
 
 			
 		}
-		arg1.setContentType("text/html");
 		
-		PrintWriter printWriter=arg1.getWriter();
-		printWriter.println("<html>");
-		printWriter.println("<body>");
+		arg0.setAttribute("name", name);
+		arg0.getRequestDispatcher("/college.jsp").forward(arg0, arg1);
 		
-		printWriter.println("<h1>"+"Success in Sending Data"+"</h1>");
-
-		printWriter.println("</body>");
-
-		printWriter.println("</html>");		
+		
+//		arg1.setContentType("text/html");
+//		
+//		PrintWriter printWriter=arg1.getWriter();
+//		printWriter.println("<html>");
+//		printWriter.println("<body>");
+//		
+//		printWriter.println("<h1>"+"Success in Sending Data"+"</h1>");
+//
+//		printWriter.println("</body>");
+//
+//		printWriter.println("</html>");		
 	}
 }

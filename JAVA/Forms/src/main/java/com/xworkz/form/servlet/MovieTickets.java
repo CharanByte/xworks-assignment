@@ -45,17 +45,20 @@ public class MovieTickets extends HttpServlet {
 		
 		else
 			System.out.println("data is  Invalid");
+		
+		req.setAttribute("name", name);
+		req.getRequestDispatcher("/movie.jsp").forward(req, resp);
 
-		resp.setContentType("text/html");
-
-		PrintWriter printWriter = resp.getWriter();
-		printWriter.println("<html>");
-		printWriter.println("<body>");
-
-		printWriter.println("<h1>" + "Success in Sending Data" + "</h1>");
-
-		printWriter.println("</body>");
-
-		printWriter.println("</html>");
+//		resp.setContentType("text/html");
+//
+//		PrintWriter printWriter = resp.getWriter();
+//		printWriter.println("<html>");
+//		printWriter.println("<body>");
+//
+//		printWriter.println("<h1>" + "Success in Sending Data" + "</h1>");
+//
+//		printWriter.println("</body>");
+//
+//		printWriter.println("</html>");
 	}
 }
