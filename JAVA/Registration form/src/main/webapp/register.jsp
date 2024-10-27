@@ -19,6 +19,7 @@ Name <input type="text" name="name" >
 Email<input type="email" name="email" >
 Age<input type="number" name="age">
 City<select name="city">
+<option>select City</option>
 <option>Bengaluru</option>
 <option>Mysuru</option>
 <option>Kolar</option>
@@ -26,6 +27,7 @@ City<select name="city">
 </select>
 
 State<select name="state">
+<option>select state</option>
 <option>KA</option>
 <option>AP</option>
 <option>TN</option>
