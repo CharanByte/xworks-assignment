@@ -3,6 +3,7 @@ package com.xworkz.register.servlet;
 import java.io.IOException;
 import java.io.PrintWriter;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -36,10 +37,15 @@ public class RegisterServlet extends HttpServlet {
 
 		PrintWriter printWriter = arg1.getWriter();
 
-		if (isValid)
+		if (isValid) {
 			printWriter.println("Data is valid ");
-		else
+			arg0.setAttribute("success", name + " Your booking is success");
+		} else {
 			printWriter.println("Data is not valid");
+			arg0.setAttribute("failure", name + " Your booking is failure");
 
+		}
+		RequestDispatcher requestDispatcher = arg0.getRequestDispatcher("register.jsp");
+		requestDispatcher.forward(arg0, arg1);
 	}
 }

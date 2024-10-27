@@ -7,11 +7,16 @@
 <title>registration</title>
 </head>
 <body>
+
+<h2>${success}</h2>
+<h2>${failure}</h2>
+
+<h1>Registration form</h1>
 <form action="register" method="post">
 <pre>
 
-Name <input type="text" name="name">
-Email<input type="email" name="email">
+Name <input type="text" name="name" >
+Email<input type="email" name="email" >
 Age<input type="number" name="age">
 City<select name="city">
 <option>Bengaluru</option>
