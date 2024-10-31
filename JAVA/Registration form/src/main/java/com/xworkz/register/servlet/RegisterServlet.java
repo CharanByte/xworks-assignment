@@ -43,6 +43,7 @@ public class RegisterServlet extends HttpServlet {
 		} else {
 			printWriter.println("Data is not valid");
 			arg0.setAttribute("failure", name + " Your booking is failure");
+			arg0.setAttribute("dto", new RegisterDTO(name, email, convertedAge, city, state));;
 
 		}
 		RequestDispatcher requestDispatcher = arg0.getRequestDispatcher("register.jsp");
