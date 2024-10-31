@@ -32,13 +32,22 @@ public class Car {
 				"(18, 'Infiniti Q50', '38000'),"+
 				"(19, 'Acura TLX', '36000'),"+
 				"(20, 'Cadillac CT5', '45000')";
-
+		String updateQuery1= " UPDATE car_table SET car_price = '26000' WHERE id = 1";
+		String updateQuery2=  "UPDATE car_table SET car_price = '25000' WHERE id = 2";
+		String updateQuery3=  "UPDATE car_table SET car_price = '36000' WHERE id = 3";
+		String updateQuery4=  "UPDATE car_table SET car_price = '24000' WHERE id = 4";
+		String updateQuery5=  "UPDATE car_table SET car_price = '23000' WHERE id = 5";
+		String updateQuery6=  "UPDATE car_table SET car_price = '42000' WHERE id = 6";
+		String updateQuery7=  "UPDATE car_table SET car_price = '43000' WHERE id = 7";
+		String updateQuery8=  "UPDATE car_table SET car_price = '44000' WHERE id = 8";
+		String updateQuery9=  "UPDATE car_table SET car_price = '28000' WHERE id = 9";
+		String updateQuery10=  "UPDATE car_table SET car_price = '22000' WHERE id = 10";
 		
 		Connection connection = null;
 		try {
 			connection = DriverManager.getConnection(url, userName, password);
 			Statement statement = connection.createStatement();
-			int value = statement.executeUpdate(insertQuery);
+			int value = statement.executeUpdate(updateQuery10);
 
 			if (value > 0)
 				System.out.println("saved");
