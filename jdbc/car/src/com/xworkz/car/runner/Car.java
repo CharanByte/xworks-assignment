@@ -43,11 +43,22 @@ public class Car {
 		String updateQuery9=  "UPDATE car_table SET car_price = '28000' WHERE id = 9";
 		String updateQuery10=  "UPDATE car_table SET car_price = '22000' WHERE id = 10";
 		
+		String deleteQuery1 = "delete from car_table where id=11";
+		String deleteQuery2 = "delete from car_table where id=12";
+		String deleteQuery3 = "delete from car_table where id=13";
+		String deleteQuery4 = "delete from car_table where id=14";
+		String deleteQuery5 = "delete from car_table where id=15";
+		String deleteQuery6 = "delete from car_table where id=16";
+		String deleteQuery7 = "delete from car_table where id=17";
+		String deleteQuery8 = "delete from car_table where id=18";
+		String deleteQuery9 = "delete from car_table where id=19";
+		String deleteQuery10 = "delete from car_table where id=20";
+
 		Connection connection = null;
 		try {
 			connection = DriverManager.getConnection(url, userName, password);
 			Statement statement = connection.createStatement();
-			int value = statement.executeUpdate(updateQuery10);
+			int value = statement.executeUpdate(deleteQuery10);
 
 			if (value > 0)
 				System.out.println("saved");
