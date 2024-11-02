@@ -33,12 +33,23 @@ public class Perfume {
 				"(19, 'Creed Aventus', '300.00'),"+
 				"(20, 'Burberry Brit', '85.00')";
 
+		String updateQuery1="UPDATE perfume_table SET perfume_price = '160.00' WHERE id = 1";
+		String updateQuery2="UPDATE perfume_table SET perfume_price = '130.00' WHERE id = 2";
+		String updateQuery3="UPDATE perfume_table SET perfume_price = '115.00' WHERE id = 3";
+		String updateQuery4="UPDATE perfume_table SET perfume_price = '140.00' WHERE id = 4";
+		String updateQuery5="UPDATE perfume_table SET perfume_price = '160.00' WHERE id = 5";
+		String updateQuery6="UPDATE perfume_table SET perfume_price = '105.00' WHERE id = 6";
+		String updateQuery7="UPDATE perfume_table SET perfume_price = '110.00' WHERE id = 7";
+		String updateQuery8="UPDATE perfume_table SET perfume_price = '85.00' WHERE id = 8";
+		String updateQuery9="UPDATE perfume_table SET perfume_price = '125.00' WHERE id = 9";
+		String updateQuery10="UPDATE perfume_table SET perfume_price = '95.00' WHERE id = 10";
 		
 		Connection connection=null;
+		
 		try {
 			connection =DriverManager.getConnection(url, userName, password);
 			Statement statement=connection.createStatement();
-			int value=statement.executeUpdate(insertQuery);
+			int value=statement.executeUpdate(updateQuery10);
 			if(value>0) 
 				System.out.println("saved");
 			else
