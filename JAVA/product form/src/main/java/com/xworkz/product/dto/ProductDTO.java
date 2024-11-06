@@ -2,16 +2,16 @@ package com.xworkz.product.dto;
 
 import java.io.Serializable;
 
-public class PoductDTO implements Serializable{
+public class ProductDTO implements Serializable{
 	private String companyName;
 	private String productName;
 	private String productType;
 	private int productQuantiy;
 	private double productCost;
-	public PoductDTO() {
+	public ProductDTO() {
 		super();
 	}
-	public PoductDTO(String companyName, String productName, String productType, int productQuantiy,
+	public ProductDTO(String companyName, String productName, String productType, int productQuantiy,
 			double productCost) {
 		super();
 		this.companyName = companyName;
@@ -61,7 +61,7 @@ public class PoductDTO implements Serializable{
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		PoductDTO other = (PoductDTO) obj;
+		ProductDTO other = (ProductDTO) obj;
 		if (companyName == null) {
 			if (other.companyName != null)
 				return false;
