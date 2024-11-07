@@ -1,6 +1,8 @@
 package com.xworkz.ticket.service;
 
 import com.xworkz.ticket.dto.TicketDTO;
+import com.xworkz.ticket.repo.TicketRepository;
+import com.xworkz.ticket.repo.TicketRepositoryImp;
 
 public class TicketServiceImp implements TicketService{
 
@@ -28,10 +30,10 @@ public class TicketServiceImp implements TicketService{
 			
 			long contact=ticketDTO.getContact();
 			if(contact>0) {
-				System.out.println("ticketNo is valid");
+				System.out.println("ticketcontact is valid");
 			}
 			else {
-				System.err.println("ticketNo is not valid");
+				System.err.println("ticketContact is not valid");
 				valid=false;
 			}
 			String email = ticketDTO.getEmail();
@@ -40,6 +42,17 @@ public class TicketServiceImp implements TicketService{
 			} else {
 				System.out.println("Email is not vallid");
 				valid = false;
+			}
+			
+			TicketRepository ticketRepositoryImp=new TicketRepositoryImp();
+			int pk=ticketRepositoryImp.save(ticketDTO);
+			if(pk>0) {
+				System.out.println("saved in database");
+				valid=true;
+			}
+			else {
+				System.out.println("not saved in database");
+				valid=false;
 			}
 		}
 		
