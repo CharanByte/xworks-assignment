@@ -34,7 +34,7 @@ public class EmployeeRunner {
 			"(20, 'janvi', 'Kapoor', 'janvi.kapoor@example.com', '',9876543229, '2024-08-15', 120, 56000.00, 30, '159 MG Road, Faridabad, HR', '1993-09-30 13:15:00', 'F')";
 			
 	
-	String selectQuery = "select * from employees where email='kajal.aggarwal@example.com' and password='Aggarwal';";
+	String selectQuery = "select first_name from employees where email='kajal.aggarwal@example.com' and password='Aggarwal';";
 	String selectQuery1 = "select address from employees where first_name='charan' and phone_number='9876543210';";
 	String selectQuery2 = "select email,password from employees where phone_number='9876543228';";
 	String selectQuery3 = "select email,password from employees where phone_number='9876543225' and first_name='Ananya';";
