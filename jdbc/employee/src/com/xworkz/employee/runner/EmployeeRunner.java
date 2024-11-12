@@ -51,11 +51,9 @@ public class EmployeeRunner {
 //			System.err.println("Not saved into Database");
 
 		ResultSet resultSet = statement.executeQuery(selectQuery);
-		if (resultSet.next()) {
+		while (resultSet.next()) {
 			System.out.println(resultSet.getString("first_name"));
-		} else
-			System.err.println("Not Found");
-
+		} 
 		System.out.println("###############################");
 
 		ResultSet resultSet1 = statement.executeQuery(selectQuery1);
@@ -67,31 +65,26 @@ public class EmployeeRunner {
 		System.out.println("###############################");
 
 		ResultSet resultSet2 = statement.executeQuery(selectQuery2);
-		if (resultSet2.next()) {
+		while (resultSet2.next()) {
 			System.out.println(resultSet2.getString("email"));
 			System.out.println(resultSet2.getString("password"));
-		} else
-			System.err.println("Not Found");
-
+		}
 		System.out.println("###############################");
 
 		ResultSet resultSet3 = statement.executeQuery(selectQuery3);
-		if (resultSet3.next()) {
+		while (resultSet3.next()) {
 			System.out.println(resultSet3.getString("email"));
 			System.out.println(resultSet3.getString("password"));
 
-		} else
-			System.err.println("Not Found");
+		} 
 
 		System.out.println("###############################");
 
 		ResultSet resultSet4 = statement.executeQuery(selectQuery4);
-		if (resultSet4.next()) {
+		while (resultSet4.next()) {
 			System.out.println(resultSet4.getString("first_name"));
-		} else {
-			System.err.println("Not Found");
-		}
-
+		} 
+		
 	} catch (SQLException e) {
 		// TODO Auto-generated catch block
 		e.printStackTrace();
