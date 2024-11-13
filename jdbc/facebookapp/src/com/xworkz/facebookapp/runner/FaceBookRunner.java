@@ -65,7 +65,7 @@ public class FaceBookRunner {
 				System.out.println(resultSet6.getString("name"));
 			}
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
+			
 			e.printStackTrace();
 		}
 
