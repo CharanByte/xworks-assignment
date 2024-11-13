@@ -1,4 +1,4 @@
-package com.xworkz.books.constants;
+package com.xworkz.preparedstatement.constants;
 
 public enum ConnectionEnum {
 

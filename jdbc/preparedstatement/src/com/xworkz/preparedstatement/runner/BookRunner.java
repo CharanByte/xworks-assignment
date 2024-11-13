@@ -1,11 +1,11 @@
-package com.xworkz.books.runner;
+package com.xworkz.preparedstatement.runner;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
-import com.xworkz.books.constants.ConnectionEnum;
+import com.xworkz.preparedstatement.constants.ConnectionEnum;
 
 public class BookRunner {
 
