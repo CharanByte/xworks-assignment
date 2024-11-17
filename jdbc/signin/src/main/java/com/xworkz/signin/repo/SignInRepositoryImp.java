@@ -12,7 +12,7 @@ public class SignInRepositoryImp  implements SignInRepository{
 
 	@Override
 	public boolean save(SignInDTO signInDTO) {
-		
+		boolean saved=true;
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
 		}catch(ClassNotFoundException e) {
@@ -26,7 +26,14 @@ public class SignInRepositoryImp  implements SignInRepository{
 			
 			preparedStatement.setString(1,signInDTO.getUserName());
 			preparedStatement.setString(2, signInDTO.getPassword());
-			int save=preparedStatement.executeUpdate();
+			int value=preparedStatement.executeUpdate();
+			if(value>0) {
+				System.out.println("saved");
+			}
+			else {
+				saved=false;
+				System.err.println("not saved");
+			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -34,7 +41,7 @@ public class SignInRepositoryImp  implements SignInRepository{
 		
 		
 		
-		return true;
+		return saved;
 	}
 
 }
