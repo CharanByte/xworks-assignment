@@ -8,7 +8,7 @@ public class InstituteServiceImp implements InstituteService {
 
 	@Override
 	public boolean validate(InstituteDTO instituteDTO) {
-		
+
 		boolean valid = true;
 		if (instituteDTO != null) {
 			System.out.println("instituteDTO is not null");
@@ -43,20 +43,28 @@ public class InstituteServiceImp implements InstituteService {
 				System.err.println("Age is Not valid");
 			}
 			String email = instituteDTO.getEmail();
-			if (email != null && email.contains("@") &&(email.endsWith("com")|email.endsWith("in"))) {
+			if (email != null && email.contains("@") && (email.endsWith("com") | email.endsWith("in"))) {
 				System.out.println("Email is valid");
 			} else {
 				valid = false;
 				System.err.println("Email is Not valid");
 			}
-			
-			if(valid) {
-				InstituteRepositoryImp instituteRepositoryImp=new InstituteRepositoryImp();
+
+			if (valid) {
+				InstituteRepositoryImp instituteRepositoryImp = new InstituteRepositoryImp();
 				instituteRepositoryImp.save(instituteDTO);
 			}
 
 		}
 		return valid;
+	}
+
+	public String getNameByPhone(String phone) {
+
+		InstituteRepositoryImp imp = new InstituteRepositoryImp();
+		String name = imp.getNameByPhone(phone);
+		return name;
+
 	}
 
 }
