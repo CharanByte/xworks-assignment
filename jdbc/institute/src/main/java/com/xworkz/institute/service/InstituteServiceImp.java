@@ -67,4 +67,11 @@ public class InstituteServiceImp implements InstituteService {
 
 	}
 
+	public int deleteDataById(int id) {
+
+		InstituteRepositoryImp imp = new InstituteRepositoryImp();
+		int value = imp.deleteDataById(id);
+		return value;
+	}
+
 }

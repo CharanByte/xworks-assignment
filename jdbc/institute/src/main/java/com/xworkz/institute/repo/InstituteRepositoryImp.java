@@ -81,5 +81,38 @@ public class InstituteRepositoryImp implements InstituteRepository {
 		return ref + " and " + ref1;
 
 	}
+	public int deleteDataById(int id) {
+		int ref=0;
+		try {
+			Class.forName("com.mysql.cj.jdbc.Driver");
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		}
+
+		Connection connection = null;
+
+		try {
+			connection = DriverManager.getConnection(InstituteConnection.URL.getValue(),
+					InstituteConnection.USERNAME.getValue(), InstituteConnection.PASSWORD.getValue());
+			PreparedStatement preparedStatement = connection
+					.prepareStatement("delete from institue_table where id=?");
+			preparedStatement.setInt(1, id);
+			int value = preparedStatement.executeUpdate();
+			if(value>0) {
+				ref=1;
+			}
+			else {
+				ref=0;
+			}
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		return ref;
+
+	}
+
 
 }
