@@ -73,5 +73,18 @@ public class InstituteServiceImp implements InstituteService {
 		int value = imp.deleteDataById(id);
 		return value;
 	}
+	public String updateByEmail(String email) {
+
+		InstituteRepositoryImp imp = new InstituteRepositoryImp();
+		String value = imp.updateByEmail(email);
+		return value;
+	}
+	
+	public String getListById(int id) {
+
+		InstituteRepositoryImp imp = new InstituteRepositoryImp();
+		String list = imp.getListById(id);
+		return list;
+	}
 
 }

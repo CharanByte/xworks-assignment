@@ -5,6 +5,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.Collection;
 
 import com.xworkz.institute.constants.InstituteConnection;
 import com.xworkz.institute.dto.InstituteDTO;
@@ -81,8 +82,40 @@ public class InstituteRepositoryImp implements InstituteRepository {
 		return ref + " and " + ref1;
 
 	}
+
 	public int deleteDataById(int id) {
-		int ref=0;
+		int ref = 0;
+		try {
+			Class.forName("com.mysql.cj.jdbc.Driver");
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		}
+
+		Connection connection = null;
+
+		try {
+			connection = DriverManager.getConnection(InstituteConnection.URL.getValue(),
+					InstituteConnection.USERNAME.getValue(), InstituteConnection.PASSWORD.getValue());
+			PreparedStatement preparedStatement = connection.prepareStatement("delete from institue_table where id=?");
+			preparedStatement.setInt(1, id);
+			int value = preparedStatement.executeUpdate();
+			if (value > 0) {
+				ref = 1;
+			} else {
+				ref = 0;
+			}
+
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		return ref;
+
+	}
+
+	public String updateByEmail(String email) {
+		String ref = null;
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
 		} catch (ClassNotFoundException e) {
@@ -95,16 +128,15 @@ public class InstituteRepositoryImp implements InstituteRepository {
 			connection = DriverManager.getConnection(InstituteConnection.URL.getValue(),
 					InstituteConnection.USERNAME.getValue(), InstituteConnection.PASSWORD.getValue());
 			PreparedStatement preparedStatement = connection
-					.prepareStatement("delete from institue_table where id=?");
-			preparedStatement.setInt(1, id);
+					.prepareStatement("update institue_table set address='kolar' where email=?");
+			preparedStatement.setString(1, email);
 			int value = preparedStatement.executeUpdate();
-			if(value>0) {
-				ref=1;
+			if (value > 0) {
+				ref = " address updated";
+			} else {
+				ref = " address not updated ";
 			}
-			else {
-				ref=0;
-			}
-			
+
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -114,5 +146,44 @@ public class InstituteRepositoryImp implements InstituteRepository {
 
 	}
 
+	public String getListById(int id) {
+		String ref = null;
+		try {
+			Class.forName("com.mysql.cj.jdbc.Driver");
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		}
+
+		Connection connection = null;
+
+		try {
+			connection = DriverManager.getConnection(InstituteConnection.URL.getValue(),
+					InstituteConnection.USERNAME.getValue(), InstituteConnection.PASSWORD.getValue());
+			PreparedStatement preparedStatement = connection
+					.prepareStatement("select * from institue_table where id=?");
+			preparedStatement.setInt(1, id);
+			ResultSet resultSet = preparedStatement.executeQuery();
+
+			while (resultSet.next()) {
+				String name = resultSet.getString("name");
+				String number = resultSet.getString("number");
+				int age = resultSet.getInt("age");
+				String address = resultSet.getString("address");
+				String email = resultSet.getString("email");
+				String password = resultSet.getString("password");
+
+				ref = "InstituteDTO [name=" + name + ", email=" + email + ", password=" + password + ", number="
+						+ number + ", age=" + age + ", address=" + address + ", id=" + id + "]";
+
+			}
+
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		return ref;
+
+	}
 
 }

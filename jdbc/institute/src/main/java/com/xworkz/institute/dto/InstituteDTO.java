@@ -17,6 +17,8 @@ import lombok.ToString;
 @EqualsAndHashCode
 
 public class InstituteDTO implements Serializable{
+
+	
 	private String name;
 	private String email;
 	private String password;
@@ -25,4 +27,5 @@ public class InstituteDTO implements Serializable{
 	private String address;
 	private int id;
 
+	
 }
