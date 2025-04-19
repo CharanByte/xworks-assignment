@@ -3,6 +3,7 @@ package com.xworkz.collections.runner;
 import java.util.ArrayList;
 import java.util.List;
 
+import lombok.EqualsAndHashCode;
 import lombok.ToString;
 
 public class BikeRunner {
