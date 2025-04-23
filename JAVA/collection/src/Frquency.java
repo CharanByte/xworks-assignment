@@ -39,6 +39,7 @@ public class Frquency {
 
         }
         for (int a:map.keySet()){
+            System.out.print(a+" ");
             if(map.get(a)==max){
                 list.add(a);
             }
