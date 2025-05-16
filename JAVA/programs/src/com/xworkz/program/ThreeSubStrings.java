@@ -16,5 +16,6 @@ public class ThreeSubStrings {
             System.out.println();
         }
 
+
     }
 }

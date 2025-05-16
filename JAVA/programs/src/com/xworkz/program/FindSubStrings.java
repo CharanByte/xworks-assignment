@@ -1,6 +1,7 @@
 package com.xworkz.program;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 
 public class FindSubStrings {
@@ -8,7 +9,6 @@ public class FindSubStrings {
     public static void main(String[] args) {
         int[] arr={1,4,3,5,6};
         int sum=0;
-        List<Integer>  list=new ArrayList<>();
         int n=arr.length;
         for (int i=0;i<n;i++){
             for (int j=i;j<n;j++){
@@ -25,5 +25,6 @@ public class FindSubStrings {
         }
         System.out.println();
         System.out.println("sum "+sum);
+
     }
 }
